@@ -2,26 +2,19 @@
 #include <iostream>
 #include "SDL.h"
 
-void Controller::HandleInput(bool &running, Player &player1, Player &player2) const {
+void Controller::HandleInput(bool &running, Player &player1) const {
   SDL_Event e;
   while (SDL_PollEvent(&e)) {
     if (e.type == SDL_QUIT) {
       running = false;
     } else if (e.type == SDL_KEYDOWN) {
       switch (e.key.keysym.sym) {
-        case SDLK_w:
+        case SDLK_UP:
           player1.MoveUp();
           break;
 
-        case SDLK_s:
-          player1.MoveDn();
-          break;
-        case SDLK_UP:
-          player2.MoveUp();
-          break;
-
         case SDLK_DOWN:
-          player2.MoveDn();
+          player1.MoveDn();
           break;
       }
     }

@@ -19,8 +19,8 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running, player1, player2);
-    Update(player1, player2);
+    controller.HandleInput(running, player1);
+    Update(player1, player2, ball);
     renderer.Render(player1, player2, ball);
 
     frame_end = SDL_GetTicks();
@@ -46,9 +46,10 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   }
 }
 
-void Game::Update(Player& player1, Player& player2) 
+void Game::Update(Player &player1, Player &player2, Ball &ball) 
 {
   ball.Update(player1, player2);
+  player2.AI(ball.y_pos);
 }
 
 int Game::GetScore() const { return score; }

@@ -5,6 +5,6 @@
 
 class Controller {
  public:
-  void HandleInput(bool &running, Player &player1, Player &player2) const;
+  void HandleInput(bool &running, Player &player1) const;
 };
 #endif
