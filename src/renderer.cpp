@@ -44,54 +44,27 @@ void Renderer::Render(Player const &player1, Player const &player2, Ball const &
   // Clear screen
   SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
   SDL_RenderClear(sdl_renderer);
-  
-  /*block.w = screen_width / grid_width;
-  block.h = screen_height / grid_height;
-
-  // Render food
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
-  block.x = food.x * block.w;
-  block.y = food.y * block.h;
-  SDL_RenderFillRect(sdl_renderer, &block);
-
-  // Render snake's body
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-  for (SDL_Point const &point : snake.body) {
-    block.x = point.x * block.w;
-    block.y = point.y * block.h;
-    SDL_RenderFillRect(sdl_renderer, &block);
-  }
-
-  // Render snake's head
-  block.x = static_cast<int>(snake.head_x) * block.w;
-  block.y = static_cast<int>(snake.head_y) * block.h;
-  if (snake.alive) {
-    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
-  } else {
-    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
-  }
-  SDL_RenderFillRect(sdl_renderer, &block);*/
 
   // Render player 1
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-    block.x = 10;
-      block.y = static_cast<int>(player1.y_pos);
-    block.w= 20;
-    block.h= 100;
+    block.x = static_cast<int>(player1.x_pos);
+    block.y = static_cast<int>(player1.y_pos);
+    block.w= static_cast<int>(player1.width);
+    block.h= static_cast<int>(player1.height);
     SDL_RenderFillRect(sdl_renderer, &block);
 
     // Render player 2
-    block.x = screen_width- 30;
-      block.y = static_cast<int>(player2.y_pos);
-    block.w= 20;
-    block.h= 100;
+    block.x = static_cast<int>(player2.x_pos);
+    block.y = static_cast<int>(player2.y_pos);
+    block.w= static_cast<int>(player2.width);
+    block.h= static_cast<int>(player2.height);
     SDL_RenderFillRect(sdl_renderer, &block);
 
     // Render ball
-    block.x = screen_width/2;
-    block.y = screen_height/2;
-    block.w= 25;
-    block.h= 25;
+    block.x = static_cast<int>(ball.x_pos);
+    block.y = static_cast<int>(ball.y_pos);
+    block.w= static_cast<int>(ball.radius);
+    block.h= static_cast<int>(ball.radius);
     SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
     SDL_RenderFillRect(sdl_renderer, &block);
 

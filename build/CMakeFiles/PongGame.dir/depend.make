@@ -3,6 +3,7 @@
 
 CMakeFiles/PongGame.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/PongGame.dir/src/ball.cpp.o: ../src/ball.h
+CMakeFiles/PongGame.dir/src/ball.cpp.o: ../src/player.h
 CMakeFiles/PongGame.dir/src/ball.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/PongGame.dir/src/ball.cpp.o: /usr/include/SDL2/SDL_assert.h
 CMakeFiles/PongGame.dir/src/ball.cpp.o: /usr/include/SDL2/SDL_atomic.h

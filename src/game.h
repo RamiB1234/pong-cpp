@@ -22,7 +22,7 @@ class Game {
 
   int score{0};
 
-  void Update();
+  void Update(Player &player1, Player &player2);
 };
 
 #endif

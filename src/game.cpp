@@ -2,7 +2,8 @@
 #include <iostream>
 #include "SDL.h"
 
-Game::Game(std::size_t screen_width, std::size_t screen_height) : player1(screen_height), player2(screen_height)
+Game::Game(std::size_t screen_width, std::size_t screen_height) :
+player1(screen_height, 10.0), player2(screen_height, screen_width-30), ball(screen_width, screen_height)
 {}
 
 void Game::Run(Controller const &controller, Renderer &renderer,
@@ -19,7 +20,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, player1, player2);
-    Update();
+    Update(player1, player2);
     renderer.Render(player1, player2, ball);
 
     frame_end = SDL_GetTicks();
@@ -45,8 +46,9 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   }
 }
 
-void Game::Update() {
- 
+void Game::Update(Player& player1, Player& player2) 
+{
+  ball.Update(player1, player2);
 }
 
 int Game::GetScore() const { return score; }
