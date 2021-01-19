@@ -1,26 +1,49 @@
 #include "player.h"
-#include <iostream>
+#include <random>
 
 
 void Player::MoveUp()
 {
-    y_pos-= 30;
+    if(can_move_up)
+        y_pos-= 30;
 }
 
 void Player::MoveDn()
 {
-    y_pos+= 30;
+    if(can_move_down)
+        y_pos+= 30;
 }
 
 void Player::AI(float &ball_y_pos)
 {
-    if(y_pos < ball_y_pos - 25)
+    float bufferDist = 21;
+
+    // Random speed
+    std::random_device rd;
+    std::mt19937 eng(rd());
+    std::uniform_int_distribution<> distr(17, 32);
+
+    if(can_move_down && y_pos < ball_y_pos - bufferDist)
     {
-        y_pos+= 15;
+        y_pos+= distr(eng);
     }
-    else if(y_pos > ball_y_pos + 25)
+    else if(can_move_up && y_pos > ball_y_pos + bufferDist)
     {
-        y_pos-= 15;
+        y_pos-= distr(eng);
     }
     
+}
+
+// Overriding virtual function
+void Player::ImplementLimitBoundaries()
+{
+    if(y_pos <=0)
+        can_move_up = false;
+    else
+        can_move_up = true;
+    
+    if(y_pos >= screen_height- height)
+        can_move_down = false;
+    else
+        can_move_down = true;      
 }

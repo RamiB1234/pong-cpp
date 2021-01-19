@@ -4,27 +4,30 @@
 #include <vector>
 #include "SDL.h"
 #include "player.h"
+#include "gameObject.h"
 
-class Ball {
-
+class Ball : public GameObject
+{
 public:
-    Ball(int screen_width, int screen_height): 
-    x_pos(screen_width/2), y_pos(screen_height/2), screen_height(screen_height){};
+    Ball(int screen_width, int screen_height): GameObject(screen_width/2, screen_height/2) , screen_width(screen_width), screen_height(screen_height){};
+
+        void ImplementLimitBoundaries() override;
 
     void Update(Player &player1, Player &player2);
 
-    float x_pos;
-    float y_pos;
     float radius = 25;
 
 private:
 
+    void ResetPosition();
+
     float speed =2;
+    float screen_width;
+    float screen_height;
+
     // These booleans determine moving direction
     bool movingLeft = true;
     bool movingDown = true;
-
-    float screen_height;
 
 };
 

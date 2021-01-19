@@ -5,6 +5,7 @@
 #include "SDL.h"
 #include "player.h"
 #include "ball.h"
+#include <string>
 
 class Renderer {
  public:
@@ -13,7 +14,7 @@ class Renderer {
   ~Renderer();
 
   void Render(Player const &player1, Player const &player2, Ball const &ball);
-  void UpdateWindowTitle(int score, int fps);
+  void UpdateWindowTitle(std::string score, int fps);
 
  private:
   SDL_Window *sdl_window;

@@ -23,6 +23,9 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     Update(player1, player2, ball);
     renderer.Render(player1, player2, ball);
 
+    // Update score
+    score = std::to_string(player1.score) + " - " + std::to_string(player2.score);
+
     frame_end = SDL_GetTicks();
 
     // Keep track of how long each loop through the input/update/render cycle
@@ -50,6 +53,10 @@ void Game::Update(Player &player1, Player &player2, Ball &ball)
 {
   ball.Update(player1, player2);
   player2.AI(ball.y_pos);
+
+  player1.ImplementLimitBoundaries();
+  player2.ImplementLimitBoundaries();
+  ball.ImplementLimitBoundaries();
 }
 
-int Game::GetScore() const { return score; }
+std::string Game::GetScore() const { return score; }

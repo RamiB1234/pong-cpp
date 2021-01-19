@@ -65,14 +65,14 @@ void Renderer::Render(Player const &player1, Player const &player2, Ball const &
     block.y = static_cast<int>(ball.y_pos);
     block.w= static_cast<int>(ball.radius);
     block.h= static_cast<int>(ball.radius);
-    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
+    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0xFF, 0x00, 0x00);
     SDL_RenderFillRect(sdl_renderer, &block);
 
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }
 
-void Renderer::UpdateWindowTitle(int score, int fps) {
-  std::string title{"Pong Game FPS: " + std::to_string(fps)};
+void Renderer::UpdateWindowTitle(std::string score, int fps) {
+  std::string title{"Pong Game - Score: "+ score +" FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }

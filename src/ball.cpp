@@ -1,5 +1,4 @@
 #include "ball.h"
-#include <iostream>
 
 
 void Ball::Update(Player& player1, Player& player2)
@@ -21,9 +20,35 @@ void Ball::Update(Player& player1, Player& player2)
         {
             movingLeft = true;
         }
-    }
+    }  
 
-    if(movingDown)
+    // Detect score:
+    if(x_pos <= 0)
+    {
+        player2.score++;
+        ResetPosition();
+    }
+    else if(x_pos + radius >= screen_width)
+    {
+        player1.score++;
+        ResetPosition();
+    }  
+}
+
+void Ball::ResetPosition()
+{
+    x_pos= screen_width/2;
+    y_pos = screen_height/2;
+
+    // Reverse motion direction:
+    movingDown = !movingDown;
+    movingLeft = !movingLeft;
+}
+
+// Overriding virtual function
+void Ball::ImplementLimitBoundaries()
+{
+   if(movingDown)
     {
         y_pos += speed;
         if(y_pos >= screen_height - 25)
@@ -38,6 +63,5 @@ void Ball::Update(Player& player1, Player& player2)
         {
             movingDown = true;
         }
-    }
-     
+    }     
 }

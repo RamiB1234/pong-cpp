@@ -6,17 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/home/workspace/CppND-Capstone/src/player.cpp
+/home/workspace/CppND-Capstone/src/ball.h
+vector
+-
+SDL.h
+/home/workspace/CppND-Capstone/src/SDL.h
 player.h
 /home/workspace/CppND-Capstone/src/player.h
-iostream
--
+gameObject.h
+/home/workspace/CppND-Capstone/src/gameObject.h
+
+/home/workspace/CppND-Capstone/src/gameObject.h
 
 /home/workspace/CppND-Capstone/src/player.h
 vector
 -
 SDL.h
 /home/workspace/CppND-Capstone/src/SDL.h
+gameObject.h
+/home/workspace/CppND-Capstone/src/gameObject.h
+
+/home/workspace/CppND-Capstone/src/renderer.cpp
+renderer.h
+/home/workspace/CppND-Capstone/src/renderer.h
+iostream
+-
+string
+-
+
+/home/workspace/CppND-Capstone/src/renderer.h
+vector
+-
+SDL.h
+/home/workspace/CppND-Capstone/src/SDL.h
+player.h
+/home/workspace/CppND-Capstone/src/player.h
+ball.h
+/home/workspace/CppND-Capstone/src/ball.h
+string
+-
 
 /usr/include/SDL2/SDL.h
 SDL_main.h
