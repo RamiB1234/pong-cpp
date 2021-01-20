@@ -19,8 +19,10 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running, player1);
+    controller.HandleInput(running, player1, gameStarted);
+
     Update(player1, player2, ball);
+
     renderer.Render(player1, player2, ball);
 
     // Update score
@@ -51,12 +53,14 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
 void Game::Update(Player &player1, Player &player2, Ball &ball) 
 {
-  ball.Update(player1, player2);
-  player2.AI(ball.y_pos);
-
-  player1.ImplementLimitBoundaries();
-  player2.ImplementLimitBoundaries();
-  ball.ImplementLimitBoundaries();
+  if(gameStarted)
+  {
+    ball.DetectCollision(player1, player2, gameStarted);
+    player2.AI(ball.y_pos);
+    player1.ImplementLimitBoundaries();
+    player2.ImplementLimitBoundaries();
+    ball.ImplementLimitBoundaries();
+  }
 }
 
 std::string Game::GetScore() const { return score; }

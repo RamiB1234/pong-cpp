@@ -16,6 +16,8 @@ class Game {
            std::size_t target_frame_duration);
   std::string GetScore() const;
 
+  bool gameStarted = false;
+
  private:
   Player player1;
   Player player2;

@@ -21,7 +21,7 @@ void Player::AI(float &ball_y_pos)
     // Random speed
     std::random_device rd;
     std::mt19937 eng(rd());
-    std::uniform_int_distribution<> distr(17, 32);
+    std::uniform_int_distribution<> distr(20, 35);
 
     if(can_move_down && y_pos < ball_y_pos - bufferDist)
     {
@@ -46,4 +46,10 @@ void Player::ImplementLimitBoundaries()
         can_move_down = false;
     else
         can_move_down = true;      
+}
+
+void Player::ResetPosition()
+{
+    x_pos= x_initial;
+    y_pos = y_initial;
 }

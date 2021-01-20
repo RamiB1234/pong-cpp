@@ -10,6 +10,7 @@ public:
     Player(int screen_height, float x_pos): GameObject(x_pos, screen_height/2 - 50), screen_height(screen_height){};
 
     void ImplementLimitBoundaries() override;
+    void ResetPosition() override;
 
     void MoveUp();
     void MoveDn();

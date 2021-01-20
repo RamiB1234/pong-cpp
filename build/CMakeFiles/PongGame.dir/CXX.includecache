@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/workspace/CppND-Capstone/src/ball.cpp
+ball.h
+/home/workspace/CppND-Capstone/src/ball.h
+
 /home/workspace/CppND-Capstone/src/ball.h
 vector
 -
@@ -16,7 +20,51 @@ player.h
 gameObject.h
 /home/workspace/CppND-Capstone/src/gameObject.h
 
+/home/workspace/CppND-Capstone/src/controller.h
+player.h
+/home/workspace/CppND-Capstone/src/player.h
+
+/home/workspace/CppND-Capstone/src/game.cpp
+game.h
+/home/workspace/CppND-Capstone/src/game.h
+iostream
+-
+SDL.h
+/home/workspace/CppND-Capstone/src/SDL.h
+
+/home/workspace/CppND-Capstone/src/game.h
+random
+-
+SDL.h
+/home/workspace/CppND-Capstone/src/SDL.h
+controller.h
+/home/workspace/CppND-Capstone/src/controller.h
+renderer.h
+/home/workspace/CppND-Capstone/src/renderer.h
+player.h
+/home/workspace/CppND-Capstone/src/player.h
+ball.h
+/home/workspace/CppND-Capstone/src/ball.h
+string
+-
+
 /home/workspace/CppND-Capstone/src/gameObject.h
+
+/home/workspace/CppND-Capstone/src/main.cpp
+iostream
+-
+controller.h
+/home/workspace/CppND-Capstone/src/controller.h
+game.h
+/home/workspace/CppND-Capstone/src/game.h
+renderer.h
+/home/workspace/CppND-Capstone/src/renderer.h
+
+/home/workspace/CppND-Capstone/src/player.cpp
+player.h
+/home/workspace/CppND-Capstone/src/player.h
+random
+-
 
 /home/workspace/CppND-Capstone/src/player.h
 vector

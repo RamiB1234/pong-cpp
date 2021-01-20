@@ -11,17 +11,16 @@ class Ball : public GameObject
 public:
     Ball(int screen_width, int screen_height): GameObject(screen_width/2, screen_height/2) , screen_width(screen_width), screen_height(screen_height){};
 
-        void ImplementLimitBoundaries() override;
+    void ImplementLimitBoundaries() override;
+    void ResetPosition() override;
 
-    void Update(Player &player1, Player &player2);
+    void DetectCollision(Player &player1, Player &player2, bool &gameStarted);
 
     float radius = 25;
 
 private:
 
-    void ResetPosition();
-
-    float speed =2;
+    float speed =3;
     float screen_width;
     float screen_height;
 
