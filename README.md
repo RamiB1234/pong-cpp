@@ -21,9 +21,9 @@ It's a clone of the classic pong game where the player can control the player in
 - At the beginning of each round, press `Up arrow`, `Down arrow` or `Space` bar to start game
 - Control your sprite by pressing `Up arrow` or `Down arrow`
 
-## project Structure
+## Project Structure
 
-This is a brief explination of the class hierarchy
+This diagram shows the class hierarchy
 
 <img src="class-structure.png"/>
 
@@ -31,11 +31,11 @@ This is a brief explination of the class hierarchy
 
 | Rubric Item | Comment/Location |
 | --- | --- |
-| The project demonstrates an understanding of C++ functions and control structures. | Please take an overlook for all files. I used multiple `control structures` where necessary |
-| The project accepts user input and processes the input | Please check Controller::HandleInput |
-| The project uses Object Oriented Programming techniques | Please take an overlook for all files. The code is organized into classes with class attributes to hold the data, and class methods to perform tasks |
-| Classes use appropriate access specifiers for class members | Please take an overlook for all files. All class data members are explicitly specified as public, protected, or private |
-| Classes abstract implementation details from their interfaces | Please take an overlook for all files. All class member functions document their effects, either through function names, comments, or formal documentation Member functions do not change program state in undocumented ways |
+| The project demonstrates an understanding of C++ functions and control structures. | Please take a overlook for all files. I used multiple `control structures` where necessary |
+| The project accepts user input and processes the input | Please check `Controller::HandleInput()` |
+| The project uses Object Oriented Programming techniques | Please take a overlook for all files. The code is organized into classes with class attributes to hold the data, and class methods to perform tasks |
+| Classes use appropriate access specifiers for class members | Please take a overlook for all files. All class data members are explicitly specified as public, protected, or private |
+| Classes abstract implementation details from their interfaces | Please take a overlook for all files. All class member functions document their effects, either through function names, comments, or formal documentation Member functions do not change program state in undocumented ways |
 | Classes follow an appropriate inheritance hierarchy | Please check the abstracl class `GameObject` it contains pure virtual functions `ImplementLimitBoundaries()` and `ResetPosition()` |
 | Derived class functions override virtual base class functions | Please check `Ball` class and `Player` class. They override the virtual methods mentiond in the previous point |
 | The project makes use of references in function declarations | Please check `Ball::DetecCollision()`,  `Player::AI()`, `Game::Update()` and `Controller::HandleInput()`. They all use pass-by-reference |
