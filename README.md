@@ -36,7 +36,7 @@ This diagram shows the class hierarchy
 | The project uses Object Oriented Programming techniques | Please take an overlook for all files. The code is organized into classes with class attributes to hold the data, and class methods to perform tasks |
 | Classes use appropriate access specifiers for class members | Please take an overlook for all files. All class data members are explicitly specified as public, protected, or private |
 | Classes abstract implementation details from their interfaces | Please take an overlook for all files. All class member functions document their effects, either through function names, comments, or formal documentation Member functions do not change program state in undocumented ways |
-| Classes follow an appropriate inheritance hierarchy | Please check the abstracl class `GameObject` it contains pure virtual functions `ImplementLimitBoundaries()` and `ResetPosition()` |
+| Classes follow an appropriate inheritance hierarchy | Please check the abstract class `GameObject` it contains pure virtual functions `ImplementLimitBoundaries()` and `ResetPosition()` |
 | Derived class functions override virtual base class functions | Please check `Ball` class and `Player` class. They override the virtual methods mentiond in the previous point |
 | The project makes use of references in function declarations | Please check `Ball::DetecCollision()`,  `Player::AI()`, `Game::Update()` and `Controller::HandleInput()`. They all use pass-by-reference |
 
