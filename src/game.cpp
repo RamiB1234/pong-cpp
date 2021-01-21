@@ -53,6 +53,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
 void Game::Update(Player &player1, Player &player2, Ball &ball) 
 {
+  // only update of the game started
   if(gameStarted)
   {
     ball.DetectCollision(player1, player2, gameStarted);

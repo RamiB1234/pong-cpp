@@ -20,6 +20,14 @@ player.h
 gameObject.h
 /home/workspace/CppND-Capstone/src/gameObject.h
 
+/home/workspace/CppND-Capstone/src/controller.cpp
+controller.h
+/home/workspace/CppND-Capstone/src/controller.h
+iostream
+-
+SDL.h
+/home/workspace/CppND-Capstone/src/SDL.h
+
 /home/workspace/CppND-Capstone/src/controller.h
 player.h
 /home/workspace/CppND-Capstone/src/player.h

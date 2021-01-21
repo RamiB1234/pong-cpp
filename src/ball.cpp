@@ -24,22 +24,25 @@ void Ball::DetectCollision(Player& player1, Player& player2, bool& gameStarted)
     // Detect score:
     if(x_pos <= 0)
     {
+        // Player 2 scores
         player2.score++;
         ResetPosition();
         player1.ResetPosition();
         player2.ResetPosition();
-        gameStarted = false;
+        gameStarted = false; // Stop movement until the player presses space or arrows
     }
     else if(x_pos + radius >= screen_width)
     {
+        // Player 1 scores
         player1.score++;
         ResetPosition();
         player1.ResetPosition();
         player2.ResetPosition();
-        gameStarted = false;
+        gameStarted = false; // Stop movement until the player presses space or arrows
     }  
 }
 
+// Overriding virtual function
 void Ball::ResetPosition()
 {
     x_pos= x_initial;

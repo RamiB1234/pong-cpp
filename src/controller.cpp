@@ -10,15 +10,15 @@ void Controller::HandleInput(bool &running, Player &player1, bool &gameStarted) 
     } else if (e.type == SDL_KEYDOWN) {
       switch (e.key.keysym.sym) {
         case SDLK_SPACE:
-          gameStarted=true;
+          gameStarted=true; // Start game if not already started
           break;
         case SDLK_UP:
-          gameStarted = true;
+          gameStarted = true; // Start game if not already started
           player1.MoveUp();
           break;
 
         case SDLK_DOWN:
-          gameStarted = true;
+          gameStarted = true; // Start game if not already started
           player1.MoveDn();
           break;
       }

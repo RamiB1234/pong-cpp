@@ -16,6 +16,7 @@ class Game {
            std::size_t target_frame_duration);
   std::string GetScore() const;
 
+  // This flag determines if game objects can move, it's set to true once buttons pressed
   bool gameStarted = false;
 
  private:
