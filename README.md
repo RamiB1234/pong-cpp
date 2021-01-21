@@ -1,12 +1,45 @@
-# CPPND: Capstone Snake Game Example
+# Pong C++
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+This is my submission for the final project of the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). I decided to make a pong game clone in C++. I used [SDL](https://libsdl.org/download-2.0.php) library to take care of renderring and input detection.
 
-<img src="snake_game.gif"/>
+## About the Game
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+It's a clone of the classic pong game where the player can control the player in the left side. The right side is controlled by a simple AI.
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+<img src="pong-game.gif"/>
+
+## Features
+
+- Simple collision detection
+- Basic AI to try to track the ball
+- Calculating score and showing it in the toolbar in the format `0 - 0`
+- Reset players and ball position on each round
+- The AI sometimes try to miss the ball to give the player a fair chance (gameplay balance)
+
+## How to Play
+
+- At the beginning of each round, press `Up arrow`, `Down arrow` or `Space` bar to start game
+- Control your sprite by pressing `Up arrow` or `Down arrow`
+
+## project Structure
+
+This is a brief explination of the class hierarchy
+
+<img src="class-structure.png"/>
+
+## Addressed Rubric Points
+
+| Rubric Item | Comment/Location |
+| --- | --- |
+| The project demonstrates an understanding of C++ functions and control structures. | Please take an overlook for all files. I used multiple `control structures` where necessary |
+| The project accepts user input and processes the input | Please check Controller::HandleInput |
+| The project uses Object Oriented Programming techniques | Please take an overlook for all files. The code is organized into classes with class attributes to hold the data, and class methods to perform tasks |
+| Classes use appropriate access specifiers for class members | Please take an overlook for all files. All class data members are explicitly specified as public, protected, or private |
+| Classes abstract implementation details from their interfaces | Please take an overlook for all files. All class member functions document their effects, either through function names, comments, or formal documentation Member functions do not change program state in undocumented ways |
+| Classes follow an appropriate inheritance hierarchy | Please check the abstracl class `GameObject` it contains pure virtual functions `ImplementLimitBoundaries()` and `ResetPosition()` |
+| Derived class functions override virtual base class functions | Please check `Ball` class and `Player` class. They override the virtual methods mentiond in the previous point |
+| The project makes use of references in function declarations | Please check `Ball::DetecCollision()`,  `Player::AI()`, `Game::Update()` and `Controller::HandleInput()`. They all use pass-by-reference |
+
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
